@@ -26,8 +26,6 @@ uniform sampler2D samplerTexture;
 
 //Função para Calcular a Iluminação de uma Única Luz
 vec3 calculateLight(vec3 lightPos, vec3 lightColor, int direcao) {
-    //vec3 ambientStrength = vec3(0.1);
-    //vec3 ambient = ambientStrength * lightColor;
 
     vec3 norm = normalize(out_normal);
     vec3 lightDir = direcao * normalize(lightPos - out_fragPos);
@@ -43,7 +41,6 @@ vec3 calculateLight(vec3 lightPos, vec3 lightColor, int direcao) {
     vec3 specular = ks * spec * lightColor;
 
     return diffuse + specular;
-    //return ambient + diffuse + specular;
 }
 
 void main(){
